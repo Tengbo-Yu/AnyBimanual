@@ -95,7 +95,7 @@ cd YARR
 pip install -e .
 ```
 
-#### 5. python3d
+#### 5. pytorch3d
 
 ```bash
 cd third_party
