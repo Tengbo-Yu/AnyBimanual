@@ -15,6 +15,7 @@ misc/
 *.so
 rvt/
 .history/
+.vsocde/
 # Distribution / packaging
 # .Python
 # build/
