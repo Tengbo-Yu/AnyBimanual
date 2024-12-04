@@ -1,6 +1,9 @@
-![AnyBimanual Logo](docs/logo.png)
+<div style="text-align: center;">
+  <img src="docs/logo.png" alt="AnyBimanual Logo" width="400">
+</div>
+
 ### [**AnyBimanual: Transferring Single-arm Policy for General Bimanual Manipulation**](#)  
-[Guanxing Lu <sup>*</sup>](https://guanxinglu.github.io/), [Tengbo Yu<sup>*</sup>](https://github.com/TengBoYuu?tab=repositories), [Haoyuan Deng](https://github.com/Denghaoyuan123?tab=repositories), [Season Si Chen](https://www.sigs.tsinghua.edu.cn/Chensi_en/main.htm), [Ziwei Wang](https://ziweiwangthu.github.io/), [Yansong Tang](https://andytang15.github.io/)
+[Guanxing Lu <sup>*</sup>](https://guanxinglu.github.io/), [Tengbo Yu<sup>*</sup>](https://github.com/TengBoYuu?tab=repositories), [Haoyuan Deng](https://github.com/Denghaoyuan123?tab=repositories), [Season Si Chen](https://www.sigs.tsinghua.edu.cn/Chensi_en/main.htm), [Ziwei Wang](https://ziweiwangthu.github.io/), [Yansong Tang <sup>✝</sup>](https://andytang15.github.io/)
 
 **[[Project Page](https://anybimanual.github.io/)] | [[Paper](#)]**
 
