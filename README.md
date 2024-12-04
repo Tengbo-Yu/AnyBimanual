@@ -11,8 +11,8 @@ Performing general language-conditioned bimanual manipulation tasks is of great 
 
 ![](docs/pipeline.png)
 
-<!-- # 📝 TODO
-- [ ] Release pretrained checkpoints. -->
+# 📝 TODO
+- [ ] Release pretrained checkpoints.
 
 # 💻 Installation
 
