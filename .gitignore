@@ -14,6 +14,7 @@ misc/
 # C extensions
 *.so
 rvt/
+.history/
 # Distribution / packaging
 # .Python
 # build/
