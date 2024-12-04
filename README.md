@@ -1,6 +1,6 @@
-<div style="text-align: center;">
+<p align="center">
   <img src="docs/logo.png" alt="AnyBimanual Logo" width="400">
-</div>
+</p>
 
 ### [**AnyBimanual: Transferring Single-arm Policy for General Bimanual Manipulation**](#)  
 [Guanxing Lu <sup>*</sup>](https://guanxinglu.github.io/), [Tengbo Yu<sup>*</sup>](https://github.com/TengBoYuu?tab=repositories), [Haoyuan Deng](https://github.com/Denghaoyuan123?tab=repositories), [Season Si Chen](https://www.sigs.tsinghua.edu.cn/Chensi_en/main.htm), [Ziwei Wang](https://ziweiwangthu.github.io/), [Yansong Tang <sup>†</sup>](https://andytang15.github.io/)
@@ -40,11 +40,21 @@ We use wandb to log some curves and visualizations. Login to wandb before runnin
 ```bash
 wandb login
 ```
-To train our AnyBimanual run:
+To train our PerAct + AnyBimanual, run:
 ```bash
 bash scripts/train.sh BIMANUAL_PERACT 0,1 12345 ${exp_name}
 ```
-where the `exp_name` can be specified as you like. You can also train other baselines such as `PERACT_BC` and `RVT`.
+where the `exp_name` can be specified as you like.
+
+To train our PerAct-LF + AnyBimanual, run:
+```bash
+bash scripts/train.sh PERACT_BC 0,1 12345 ${exp_name}
+```
+
+To train our RVT-LF + AnyBimanual, run:
+```bash
+bash scripts/train.sh RVT 0,1 12345 ${exp_name}
+```
 
 Set the `augmentation_type` in the `scripts/train.sh` to choose whether to apply the augmentation methods mentioned in our paper or to use the original SE3 augmentation.
 
