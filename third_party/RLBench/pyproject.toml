@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "rlbench"
+version = "1.2.1"
+description = "RLBench"
+authors = [ 'Stephen James <slj12@ic.ac.uk>',
+'Mohit Shridhar <mohit.appi@gmail.com>',
+'Markus Grotz <grotz@uw.edu>']
+packages = [{include = 'rlbench'}]
+
+include=['*.ttm', '*.obj', '**/**/*.ttm', '**/**/*.obj', 'task_design.ttt']
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Framework :: Robot Framework "
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+numpy = "^1.23.3"
+Pillow = "^9.2.0"
+pyquaternion = "^0.9.9"
+click-prompt = "^0.5.1"
+rich-click = "^1.8.3"
+
+[tool.poetry.dev-dependencies]
+toml = "^0.10.2"
+
+[tool.poetry.extras]
+docs = ["sphinx"]
+
+[build-system]
+requires = ["setuptools", "wheel", "poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+

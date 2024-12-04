@@ -1,0 +1,7 @@
+agent:
+  # checkpoint path
+  seed_path: 'path to your checkpoint'
+  weight: 24000 # checkpoint weight 
+
+  episode_length: 10 # length of each episode
+

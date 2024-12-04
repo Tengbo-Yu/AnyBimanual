@@ -1,0 +1,65 @@
+ddp:
+    master_addr: "localhost"
+    master_port: "0"
+    num_devices: 1
+
+rlbench:
+    task_name: "tasks"
+    tasks: [open_drawer,slide_block_to_color_target]
+    demos: 100
+    demo_path: /my/demo/path
+    episode_length: 25
+    cameras: [ "over_shoulder_right", "wrist_right", "front", "overhead","over_shoulder_left" , "wrist_left"]
+    camera_resolution: [256,256]
+    scene_bounds: [-0.3, -0.5, 0.6, 0.7, 0.5, 1.6]
+    include_lang_goal_in_obs: True
+    instructions: /path
+
+replay:
+    batch_size: 8
+    timesteps: 1 # history
+    prioritisation: False
+    task_uniform: True # uniform sampling of tasks for multi-task buffers
+    use_disk: True
+    path: '/tmp/arm/replay' # only used when use_disk is True.
+    max_parallel_processes: 32
+    task_folder: "multi"
+
+framework:
+    log_freq: 100
+    save_freq: 10000
+    train_envs: 1
+    replay_ratio: ${replay.batch_size}
+    transitions_before_train: 200
+    tensorboard_logging: True
+    csv_logging: True
+    training_iterations: 100001
+    gpu: 0
+    env_gpu: 0
+    logdir: '/tmp/arm_test/'
+    logging_level: 20 # https://docs.python.org/3/library/logging.html#levels
+    seeds: 1
+    start_seed: 0
+    load_existing_weights: False
+    num_weights_to_keep: 60 # older checkpoints will be deleted chronologically
+    num_workers: 0
+    record_every_n: 5
+    checkpoint_name_prefix: "checkpoint"
+    use_wandb: True
+    wandb_project: "peract_bimanual"
+    wandb_group: ${rlbench.task_name}_${method.name}
+    seed: 0
+    wandb_name: ${framework.seed}
+    use_skill: True
+    use_pretrained: False
+    use_prefix: False
+    frozen: False
+    anybimanual: False
+    augmentation_type: "standard"
+
+defaults:
+    - method: PERACT_BC
+
+hydra:
+    run:
+        dir: ${framework.logdir}/${rlbench.task_name}/${method.name}
