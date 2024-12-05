@@ -20,7 +20,7 @@ https://github.com/user-attachments/assets/2cd23178-fde9-4af9-89c4-7cd703c88156
 
 🎉 **NEWS**: 
 
-- *Dec. 2024:* Codebase is released!.
+- *Dec. 2024:* Codebase for both simulated and real-world experiments is released!
 
 # 📝 TODO
 - [ ] Release pretrained checkpoints.
