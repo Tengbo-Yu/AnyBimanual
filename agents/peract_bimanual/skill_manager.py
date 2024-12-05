@@ -10,7 +10,7 @@ class SkillManager(nn.Module):
             embedding_matrix=None,
             voxel_dim=128,
             lang_dim=128,
-            hidden_size=256,
+            hidden_size=128,
             output_dim=18,
             max_voxels=8000,
             max_lang_tokens=77,
