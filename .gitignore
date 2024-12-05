@@ -13,7 +13,6 @@ bimanual_data/
 misc/
 # C extensions
 *.so
-rvt/
 .history/
 .vsocde/
 # Distribution / packaging
