@@ -13,6 +13,7 @@ bimanual_data/
 misc/
 # C extensions
 *.so
+*.ipynb
 .history/
 .vsocde/
 # Distribution / packaging
