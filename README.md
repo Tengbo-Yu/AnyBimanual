@@ -9,9 +9,12 @@
 
 **[[Project Page](https://anybimanual.github.io/)] | [[Paper](#)]**
 
-![](docs/pipeline.png)
+<!-- ![](docs/pipeline.png) -->
 
-https://github.com/user-attachments/assets/93784511-9f70-48fa-9e97-55f629f5a547
+**AnyBimanual** is a training framework to transfer any pretrained unimanual robotic manipulation policy to multi-task bimanual manipulation policy with few bimanual demonstrations. We first introduce a **skill manager** to dynamically schedule the skill representations discovered from pretrained unimanual policy for bimanual manipulation tasks, which linearly combines skill primitives with task-oriented compensation to represent the bimanual manipulation instruction. To mitigate the observation discrepancy between unimanual and bimanual systems, we present a **visual aligner** to generate soft masks for visual embedding of the workspace, which aims to align visual input of unimanual policy model for each arm with those during pretraining stage. AnyBimanual shows superiority on **12** simulated tasks from **RLBench2** with a sizable **12.67\%** improvement in success rate over previous methods. Experiments on **9** real-world tasks further verify its practicality with an average success rate of **84.62\%**.
+
+
+https://github.com/user-attachments/assets/79d7ba61-48dd-4e58-80a0-db972cdbb2b4
 
 
 🎉 **NEWS**: 
