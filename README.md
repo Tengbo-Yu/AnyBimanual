@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/logo.png" alt="AnyBimanual Logo" width="400">
+  <img src="docs/logo_v2.png" alt="AnyBimanual Logo">
 </p>
 
 ### [**AnyBimanual: Transferring Single-arm Policy for General Bimanual Manipulation**](#)  
@@ -7,9 +7,12 @@
 
 **[[Project Page](https://anybimanual.github.io/)] | [[Paper](#)]**
 
-Performing general language-conditioned bimanual manipulation tasks is of great importance for many applications ranging from household service to industrial assembly. However, collecting bimanual manipulation data is expensive due to the high-dimensional action space, which poses challenges for conventional methods to handle general bimanual manipulation tasks. In contrast, unimanual policy has recently demonstrated impressive generalizability across a wide range of tasks because of scaled model parameters and training data, which can provide sharable manipulation knowledge for bimanual systems. To this end, we propose a plug-and-play method named AnyBimanual, which transfers pretrained unimanual policy to general bimanual manipulation policy with few bimanual demonstrations. Specifically, we first introduce a skill manager to dynamically schedule the skill representations discovered from pretrained unimanual policy for bimanual manipulation tasks, which linearly combines skill primitives with task-oriented compensation to represent the bimanual manipulation instruction. To mitigate the observation discrepancy between unimanual and bimanual systems, we present a visual aligner to generate soft masks for visual embedding of the workspace, which aims to align visual input of unimanual policy model for each arm with those during pretraining stage. AnyBimanual shows superiority on 12 simulated tasks from RLBench2 with a sizable 12.67% improvement in success rate over previous methods. Experiments on 9 real-world tasks further verify its practicality with an average success rate of 84.62%.          </p>
-
 ![](docs/pipeline.png)
+
+
+🎉 **NEWS**: 
+
+- *Dec. 2024:* Codebase is released!.
 
 # 📝 TODO
 - [ ] Release pretrained checkpoints.
