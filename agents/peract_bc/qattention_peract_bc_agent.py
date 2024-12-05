@@ -17,7 +17,11 @@ from yarr.agents.agent import (
     ImageSummary,
     Summary,
 )
-
+import matplotlib.pyplot as plt
+import PIL.Image as Image
+import wandb
+import io
+from termcolor import colored, cprint
 from helpers import utils
 from helpers.utils import visualise_voxel, stack_on_channel
 from voxel.voxel_grid import VoxelGrid
@@ -162,6 +166,7 @@ class QAttentionPerActBCAgent(Agent):
         num_devices: int = 1,
         checkpoint_name_prefix=None,
         anybimanual = False,
+        cfg=None,
     ):
         self._layer = layer
         self._coordinate_bounds = coordinate_bounds
@@ -201,6 +206,7 @@ class QAttentionPerActBCAgent(Agent):
         checkpoint_name_prefix = checkpoint_name_prefix or "QAttentionAgent"
         self._name = f"{checkpoint_name_prefix}_layer_{self._layer}"
         self.anybimanual = anybimanual
+        self.cfg=cfg
 
 
     def build(self, training: bool, device: torch.device = None):
@@ -446,7 +452,7 @@ class QAttentionPerActBCAgent(Agent):
         prev_layer_voxel_grid = replay_sample.get("prev_layer_voxel_grid", None)
         prev_layer_bounds = replay_sample.get("prev_layer_bounds", None)
         device = self._device
-
+        rank = device
         bounds = self._coordinate_bounds.to(device)
         if self._layer > 0:
             cp = replay_sample["attention_coordinate_layer_%d" % (self._layer - 1)]
@@ -571,6 +577,14 @@ class QAttentionPerActBCAgent(Agent):
             + (q_collision_loss * self._collision_loss_weight)
         )
         total_loss = combined_losses.mean()
+        if step % 10 == 0 and rank == 0:
+            wandb.log({
+                'train/grip_loss': q_grip_loss.mean(),
+                'train/trans_loss': q_trans_loss.mean(),
+                'train/rot_loss': q_rot_loss.mean(),
+                'train/collision_loss': q_collision_loss.mean(),
+                'train/total_loss': total_loss,
+            }, step=step)
 
         self._optimizer.zero_grad()
         total_loss.backward()
@@ -585,7 +599,13 @@ class QAttentionPerActBCAgent(Agent):
             if with_rot_and_grip
             else 0.0,
         }
-
+        self._wandb_summaries = {
+            'losses/total_loss': total_loss,
+            'losses/trans_loss': q_trans_loss.mean(),
+            'losses/rot_loss': q_rot_loss.mean() if with_rot_and_grip else 0.,
+            'losses/grip_loss': q_grip_loss.mean() if with_rot_and_grip else 0.,
+            'losses/collision_loss': q_collision_loss.mean() if with_rot_and_grip else 0.
+        }
         if self._lr_scheduler:
             self._scheduler.step()
             self._summaries["learning_rate"] = self._scheduler.get_last_lr()[0]
@@ -608,12 +628,64 @@ class QAttentionPerActBCAgent(Agent):
         else:
             prev_layer_bounds = prev_layer_bounds + [bounds]
 
+        q_trans_vis=True
+        if step % self.cfg.framework.log_freq == 0  and rank == 0:
+            print(f"{arm}_arm_predict: {self._vis_max_coordinate}")
+            print(f"{arm}_gt: {self._vis_gt_coordinate}")
+            rendered_img = visualise_voxel(
+                voxel_grid[0].cpu().detach().numpy(),    # [10, 100, 100, 100]
+                self._vis_translation_qvalue.detach().cpu().numpy() if q_trans_vis else None,
+                self._vis_max_coordinate.detach().cpu().numpy(),
+                self._vis_gt_coordinate.detach().cpu().numpy(),
+                voxel_size=0.045,
+                # voxel_size=0.1,   # more focus ??
+                rotation_amount=np.deg2rad(-90),
+                highlight_alpha=1.0,
+                alpha=0.4,
+            )
+            os.makedirs('recon', exist_ok=True)
+            # plot three images in one row with subplots:
+            rgb_src = obs[0][0][0].squeeze(0).permute(1, 2, 0)  / 2 + 0.5
+
+            fig, axs = plt.subplots(1, 4, figsize=(9, 3))
+            # src
+            axs[0].imshow(rgb_src.cpu().numpy())
+            axs[0].title.set_text('src')
+
+            axs[1].imshow(rendered_img)
+            axs[1].text(0, 40, 'predicted', color='blue')
+            axs[1].text(0, 80, 'gt', color='red')
+            for ax in axs:
+                ax.axis('off')
+            plt.tight_layout()
+
+            if rank == 0:
+                if self.cfg.framework.use_wandb:
+                    buf = io.BytesIO()
+                    plt.savefig(buf, format='png')
+                    buf.seek(0)
+
+                    image = Image.open(buf)
+                    wandb.log({"eval/recon_img": wandb.Image(image)}, step=step)
+
+                    buf.close()
+                    cprint(f'Saved to wandb', 'cyan')
+                else:
+                    plt.savefig(f'recon/{step}_rgb.png')
+                    workdir = os.getcwd()
+                    cprint(f'Saved {workdir}/recon/{step}_rgb.png locally', 'cyan')
         return {
             "total_loss": total_loss,
             "prev_layer_voxel_grid": prev_layer_voxel_grid,
             "prev_layer_bounds": prev_layer_bounds,
         }
-
+    
+    def update_wandb_summaries(self):
+        summaries = dict()
+        for k, v in self._wandb_summaries.items():
+            summaries[k] = v
+        return summaries
+    
     def act(self, step: int, observation: dict, deterministic=False) -> ActResult:
         deterministic = True
         bounds = self._coordinate_bounds
