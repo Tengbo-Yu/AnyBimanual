@@ -3,25 +3,29 @@
 </p> -->
 
 
-<img src="docs/logo.png" alt="AnyBimanual Logo" width="200">
+<!-- <img src="docs/logo.png" alt="AnyBimanual Logo" width="200"> -->
+<div align="center">
 
-### **AnyBimanual: Transferring Single-arm Policy for General Bimanual Manipulation**
-[Guanxing Lu <sup>*</sup>](https://guanxinglu.github.io/), [Tengbo Yu <sup>*</sup>](https://github.com/TengBoYuu?tab=repositories), [Haoyuan Deng](https://github.com/Denghaoyuan123?tab=repositories), [Season Si Chen](https://www.sigs.tsinghua.edu.cn/Chensi_en/main.htm), [Ziwei Wang](https://ziweiwangthu.github.io/), [Yansong Tang <sup>†</sup>](https://andytang15.github.io/)
-
+# <img src="docs/logo.png" alt="Logo" width="100"/> AnyBimanual: Transferring Single-arm Policy for General Bimanual Manipulation
+---
 [![python](https://img.shields.io/badge/-Python_3.8_-blue?logo=python&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![pytorch](https://img.shields.io/badge/PyTorch_2.0+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
 [![wandb](https://img.shields.io/badge/Wandb_0.14.0-yellow?logo=weightsandbiases&logoColor=white)](https://wandb.ai/site/)
 [![hydra](https://img.shields.io/badge/Config-Hydra_1.0.5-89b8cd)](https://hydra.cc/)
 [![license](https://img.shields.io/badge/License-MIT-gree.svg?labelColor=gray)](https://github.com/ashleve/lightning-hydra-template#license)
 
-**[[Project Page](https://anybimanual.github.io/)] | [[Paper](#)]**
+[Guanxing Lu <sup>*</sup>](https://guanxinglu.github.io/), [Tengbo Yu <sup>*</sup>](https://github.com/TengBoYuu?tab=repositories), [Haoyuan Deng](https://github.com/Denghaoyuan123?tab=repositories), [Season Si Chen](https://www.sigs.tsinghua.edu.cn/Chensi_en/main.htm), [Ziwei Wang](https://ziweiwangthu.github.io/), [Yansong Tang <sup>†</sup>](https://andytang15.github.io/)
 
+**[[Project Page](https://anybimanual.github.io/)] | [[Paper](#)] | [[Real-World Codebase](https://github.com/Denghaoyuan123/Bimanual_ur5e_joystick_control)] | [[YouTube](https://www.youtube.com/watch?v=ycWzHi8yHCQ)] | [[X](#)]**
+
+</div>
 <!-- ![](docs/pipeline.png) -->
 
 **AnyBimanual** is a training framework to transfer any pretrained unimanual robotic manipulation policy to multi-task bimanual manipulation policy with few bimanual demonstrations. We first introduce a **skill manager** to dynamically schedule the skill representations discovered from pretrained unimanual policy for bimanual manipulation tasks, which linearly combines skill primitives with task-oriented compensation to represent the bimanual manipulation instruction. To mitigate the observation discrepancy between unimanual and bimanual systems, we present a **visual aligner** to generate soft masks for visual embedding of the workspace, which aims to align visual input of unimanual policy model for each arm with those during pretraining stage. AnyBimanual shows superiority on **12** simulated tasks from **RLBench2** with a sizable **12.67\%** improvement in success rate over previous methods. Experiments on **9** real-world tasks further verify its practicality with an average success rate of **84.62\%**.
 
 
 https://github.com/user-attachments/assets/2cd23178-fde9-4af9-89c4-7cd703c88156
+
 
 🎉 **NEWS**: 
 
