@@ -6,7 +6,7 @@
 <img src="docs/logo.png" alt="AnyBimanual Logo" width="200">
 
 ### **AnyBimanual: Transferring Single-arm Policy for General Bimanual Manipulation**
-[Guanxing Lu <sup>*</sup>](https://guanxinglu.github.io/), [Tengbo Yu<sup>*</sup>](https://github.com/TengBoYuu?tab=repositories), [Haoyuan Deng](https://github.com/Denghaoyuan123?tab=repositories), [Season Si Chen](https://www.sigs.tsinghua.edu.cn/Chensi_en/main.htm), [Ziwei Wang](https://ziweiwangthu.github.io/), [Yansong Tang <sup>†</sup>](https://andytang15.github.io/)
+[Guanxing Lu <sup>*</sup>](https://guanxinglu.github.io/), [Tengbo Yu <sup>*</sup>](https://github.com/TengBoYuu?tab=repositories), [Haoyuan Deng](https://github.com/Denghaoyuan123?tab=repositories), [Season Si Chen](https://www.sigs.tsinghua.edu.cn/Chensi_en/main.htm), [Ziwei Wang](https://ziweiwangthu.github.io/), [Yansong Tang <sup>†</sup>](https://andytang15.github.io/)
 
 **[[Project Page](https://anybimanual.github.io/)] | [[Paper](#)]**
 
@@ -79,13 +79,13 @@ bash scripts/eval.sh BIMANUAL_PERACT 0 ${exp_name}
 
 ### 🎮 Prepare data in real world
 
-[Demonstrations Collection by teleoperation](https://github.com/Denghaoyuan123/Bimanual_ur5e_joystick_control)
+You can refer to [Demonstrations Collection by teleoperation](https://github.com/Denghaoyuan123/Bimanual_ur5e_joystick_control) to set up your device in the real world and collect **raw data**.
 
-Data convert into RLbench2 form
+Convert **raw data** into [**RLbench2**](https://github.com/markusgrotz/peract_bimanual) form, run:
 ```bash
 python3 anybimanual_real_supply/data/preprocess_ntu_dualarm.py
 ```  
-Keyframe selection
+Keyframes selection, run:
 ```bash
 python3 anybimanual_real_supply/data/auto_keyframe_mani.py
 ```
