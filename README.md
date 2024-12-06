@@ -17,6 +17,11 @@
 
 https://github.com/user-attachments/assets/2cd23178-fde9-4af9-89c4-7cd703c88156
 
+[![python](https://img.shields.io/badge/-Python_3.8_-blue?logo=python&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![pytorch](https://img.shields.io/badge/PyTorch_2.0+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
+[![wandb](https://img.shields.io/badge/Wandb_0.14.0-yellow?logo=weightsandbiases&logoColor=white)](https://wandb.ai/site/)
+[![hydra](https://img.shields.io/badge/Config-Hydra_1.0.5-89b8cd)](https://hydra.cc/)
+[![license](https://img.shields.io/badge/License-MIT-gree.svg?labelColor=gray)](https://github.com/ashleve/lightning-hydra-template#license)
 
 🎉 **NEWS**: 
 
