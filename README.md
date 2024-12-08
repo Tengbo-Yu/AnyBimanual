@@ -15,7 +15,7 @@
 [![hydra](https://img.shields.io/badge/Config-Hydra_1.0.5-89b8cd)](https://hydra.cc/)
 [![license](https://img.shields.io/badge/License-MIT-gree.svg?labelColor=gray)](https://github.com/ashleve/lightning-hydra-template#license)
 
-[Guanxing Lu <sup>*</sup>](https://guanxinglu.github.io/), [Tengbo Yu <sup>*</sup>](https://github.com/TengBoYuu?tab=repositories), [Haoyuan Deng](https://github.com/Denghaoyuan123?tab=repositories), [Season Si Chen](https://www.sigs.tsinghua.edu.cn/Chensi_en/main.htm), [Ziwei Wang](https://ziweiwangthu.github.io/), [Yansong Tang <sup>†</sup>](https://andytang15.github.io/)
+[Guanxing Lu <sup>*</sup>](https://guanxinglu.github.io/), [Tengbo Yu <sup>*</sup>](https://github.com/TengBoYuu?tab=repositories), [Haoyuan Deng](https://github.com/Denghaoyuan123?tab=repositories), [Season Si Chen](https://www.sigs.tsinghua.edu.cn/Chensi_en/main.htm), [Yansong Tang <sup>†</sup>](https://andytang15.github.io/), [Ziwei Wang](https://ziweiwangthu.github.io/)
 
 **[[Project Page](https://anybimanual.github.io/)] | [[Paper](#)] | [[Real-World Codebase](https://github.com/Denghaoyuan123/Bimanual_ur5e_joystick_control)] | [[YouTube](https://www.youtube.com/watch?v=ycWzHi8yHCQ)] | [[X](#)]**
 
@@ -128,7 +128,7 @@ If you find this repository helpful, please consider citing:
 
 ```
 @article{lu2024anybimanual,
-  author    = {Lu, Guanxing and Yu, Tengbo and Deng, Haoyuan and Chen, Season Si and Wang, Ziwei and Tang, Yansong},
+  author    = {Lu, Guanxing and Yu, Tengbo and Deng, Haoyuan and Chen, Season Si and Tang, Yansong and Wang, Ziwei},
   title     = {AnyBimanual: Transferring Single-arm Policy for General Bimanual Manipulation},
   year      = {2024},
 }
