@@ -17,7 +17,7 @@
 
 [Guanxing Lu <sup>*</sup>](https://guanxinglu.github.io/), [Tengbo Yu <sup>*</sup>](https://github.com/TengBoYuu?tab=repositories), [Haoyuan Deng](https://github.com/Denghaoyuan123?tab=repositories), [Season Si Chen](https://www.sigs.tsinghua.edu.cn/Chensi_en/main.htm), [Yansong Tang <sup>†</sup>](https://andytang15.github.io/), [Ziwei Wang](https://ziweiwangthu.github.io/)
 
-**[[Project Page](https://anybimanual.github.io/)] | [[Paper](#)] | [[Real-World Codebase](https://github.com/Denghaoyuan123/Bimanual_ur5e_joystick_control)] | [[YouTube](https://www.youtube.com/watch?v=ycWzHi8yHCQ)] | [[X](#)]**
+**[[Project Page](https://anybimanual.github.io/)] | [[Paper](https://arxiv.org/pdf/2412.06779)] | [[Real-World Codebase](https://github.com/Denghaoyuan123/Bimanual_ur5e_joystick_control)] | [[YouTube](https://www.youtube.com/watch?v=ycWzHi8yHCQ)] | [[X](#)]**
 
 </div>
 <!-- ![](docs/pipeline.png) -->
