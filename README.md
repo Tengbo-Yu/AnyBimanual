@@ -127,8 +127,9 @@ If you find this repository helpful, please consider citing:
 
 ```
 @article{lu2024anybimanual,
-  author    = {Lu, Guanxing and Yu, Tengbo and Deng, Haoyuan and Chen, Season Si and Tang, Yansong and Wang, Ziwei},
-  title     = {AnyBimanual: Transferring Single-arm Policy for General Bimanual Manipulation},
-  year      = {2024},
+  title={AnyBimanual: Transferring Unimanual Policy for General Bimanual Manipulation},
+  author={Lu, Guanxing and Yu, Tengbo and Deng, Haoyuan and Chen, Season Si and Tang, Yansong and Wang, Ziwei},
+  journal={arXiv preprint arXiv:2412.06779},
+  year={2024}
 }
 ```
