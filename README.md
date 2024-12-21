@@ -7,7 +7,7 @@
 <div align="center">
 <img src="docs/logo.png" alt="AnyBimanual Logo" width="200">
 
-# AnyBimanual: Transferring Single-arm Policy for General Bimanual Manipulation
+# AnyBimanual: Transferring Unimanual Policy for General Bimanual Manipulation
 
 [![python](https://img.shields.io/badge/-Python_3.8_-blue?logo=python&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![pytorch](https://img.shields.io/badge/PyTorch_2.0+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
@@ -127,8 +127,9 @@ If you find this repository helpful, please consider citing:
 
 ```
 @article{lu2024anybimanual,
-  author    = {Lu, Guanxing and Yu, Tengbo and Deng, Haoyuan and Chen, Season Si and Tang, Yansong and Wang, Ziwei},
-  title     = {AnyBimanual: Transferring Single-arm Policy for General Bimanual Manipulation},
-  year      = {2024},
+  title={AnyBimanual: Transferring Unimanual Policy for General Bimanual Manipulation},
+  author={Lu, Guanxing and Yu, Tengbo and Deng, Haoyuan and Chen, Season Si and Tang, Yansong and Wang, Ziwei},
+  journal={arXiv preprint arXiv:2412.06779},
+  year={2024}
 }
 ```
