@@ -683,7 +683,7 @@ if __name__ == "__main__":
     # left_action_trans = left_action_gripper_pose[:, :3]
     # left_action_rot_grip = left_action_gripper_pose[:, 3:]
 
-    root_path = "/mnt/disk_1/tengbo/peract_bimanual-real/voxel/debug"
+    root_path = "/path/to/your/file"
     pcd = np.load(os.path.join(root_path, "pcd.npy"))
     pcd = [torch.tensor(pcd)]
     right_action_gripper_pose = np.load(os.path.join(root_path, "right_action_gripper_pose.npy"))
