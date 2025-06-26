@@ -29,6 +29,7 @@ https://github.com/user-attachments/assets/2cd23178-fde9-4af9-89c4-7cd703c88156
 
 🎉 **NEWS**: 
 
+- *Jun. 2025:* Our paper is accepted by ICCV2025!
 - *Dec. 2024:* Codebase for both simulated and real-world experiments is released!
 
 # 📝 TODO
